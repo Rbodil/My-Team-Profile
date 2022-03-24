@@ -1,0 +1,23 @@
+body{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: linear-gradient(rgb(6, 0, 94), rgb(41, 0, 59));
+}
+
+header{
+    background-color: rgb(0, 82, 61);
+    text-align: center;
+    width: max-content;
+    height: 75px;
+    border: 2px solid rgb(255, 230, 0);
+}
+
+.manager{
+    background-color: rgb(236, 0, 0);
+}
+.engineer{
+    background-color: rgb(38, 156, 2);
+}
+.intern{
+    background-color: rgb(255, 115, 0);
+}
