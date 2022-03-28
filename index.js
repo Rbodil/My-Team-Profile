@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const {writeFile, copyFile} = require('./lib/generate-site.js')
+const { writeFile, copyFile } = require('./lib/generate-site.js')
 const generatePage = require('./src/page-template')
 
 const newTeam = [];
@@ -64,7 +64,7 @@ function start() {
                     addIntern();
                     break;
                 default:
-                    buildTeam();
+                    generatePage();
             }
         });
     }
@@ -105,7 +105,7 @@ function start() {
         });
     }
 
-    function addIntern(){
+    function addIntern() {
         inquirer.prompt([
             {
                 message: "What is their name?",
@@ -134,16 +134,21 @@ function start() {
 
             }
         ]).then(answers => {
-            const intern = new Intern (answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
             teamMembers.push(intern);
             idArray.push(answers.internId);
             addEmployee();
         });
     }
 
-    
 
-
-
+    getManager();
 
 };
+
+start();
+
+
+
+
+
