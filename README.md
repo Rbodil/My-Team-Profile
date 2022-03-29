@@ -34,7 +34,5 @@
 
   ## Questions
 
-  https://github.com/Rbodil
-
   If you have any questions about this application, direct them to the email below:
   reaganbodily@gmail.com
