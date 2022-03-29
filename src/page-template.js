@@ -12,7 +12,7 @@ const generateTeam = team => {
                 <br>
                 <p>Phone: ${manager.getNumber()}</p>
                 <br>
-                <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a>}</p>
+                <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
             </div>
         </div>
         `
@@ -30,7 +30,7 @@ const generateTeam = team => {
                 <br>
                 <p>Github<a href="https://github.com/${engineer.getGithub()}" target="_blank"></a></p>
                 <br>
-                <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a>}</p>
+                <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
             </div>
         </div>
         `
@@ -46,7 +46,7 @@ const generateTeam = team => {
             <div class="employee-info">
                 <p>ID: ${intern.getId()}<p>
                 <br>
-                <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a>}</p>
+                <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
                 <br>
                 <p>${intern.getSchool()}<p>
             </div>

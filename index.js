@@ -24,7 +24,7 @@ function getManager() {
         {
             message: "What their employee ID number?",
             type: "input",
-            name: "managerID"
+            name: "managerId"
         },
         {
             message: "What is their email address?",
@@ -58,7 +58,6 @@ function addEmployee() {
             ]
         }
     ]).then(userChoice => {
-        console.log('this runs ', userChoice)
         switch (userChoice.addEmployee) {
             case "Engineer":
                 addEngineer();
