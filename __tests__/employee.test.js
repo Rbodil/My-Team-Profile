@@ -1,3 +1,4 @@
+const { it } = require("@jest/globals");
 const Employee = require("../lib/Employee");
 
 it("Can add employee", () => {

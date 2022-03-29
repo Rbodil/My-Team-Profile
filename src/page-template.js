@@ -1,6 +1,5 @@
 const generateTeam = team => {
 
-
     const managerCard = manager => {
         return `
         <div class="employee-card">
@@ -64,7 +63,10 @@ const generateTeam = team => {
         .map(intern => internCard(intern))
         .join("")
     );
+
+    return teamArray.join('')
 }
+
 
 module.exports = team => {
 
@@ -84,7 +86,7 @@ module.exports = team => {
 <body>
     <header>
         <div>
-            <h1>Team Name</h1>
+            <h1>My Team</h1>
         </div>
     </header>
     <section class="container">

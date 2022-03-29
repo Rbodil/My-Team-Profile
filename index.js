@@ -1,9 +1,12 @@
-const inquirer = require("inquirer");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const { writeFile, copyFile } = require('./lib/generate-site.js')
-const generatePage = require('./src/page-template')
+
+const inquirer = require("inquirer");
+const fs = require("fs");
+
+const generatePage = require('./src/page-template');
+
 
 const newTeam = [];
 const teamIds = [];
@@ -35,9 +38,9 @@ function start() {
                 name: "managerNumber"
             }
         ]).then(answers => {
-            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-            teamMembers.push(manager);
-            idArray.push(answers.managerId);
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerNumber);
+            newTeam.push(manager);
+            teamIds.push(answers.managerId);
             addEmployee();
         });
     }
@@ -64,7 +67,7 @@ function start() {
                     addIntern();
                     break;
                 default:
-                    generatePage();
+                    generateSite();
             }
         });
     }
@@ -99,8 +102,8 @@ function start() {
             }
         ]).then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-            teamMembers.push(engineer);
-            idArray.push(answers.engineerId);
+            newTeam.push(engineer);
+            teamIds.push(answers.engineerId);
             addEmployee();
         });
     }
@@ -135,11 +138,17 @@ function start() {
             }
         ]).then(answers => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
-            teamMembers.push(intern);
-            idArray.push(answers.internId);
+            newTeam.push(intern);
+            teamIds.push(answers.internId);
             addEmployee();
         });
     }
+
+    function generateSite() {
+
+        fs.writeFileSync("./dist/index.html", generatePage(newTeam), "utf-8");
+
+    };
 
 
     getManager();
