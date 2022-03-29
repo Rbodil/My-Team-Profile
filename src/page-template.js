@@ -3,7 +3,10 @@ const generateTeam = team => {
     const managerCard = manager => {
         return `
         <div class="employee-card">
-            <h2 class="Manager">${manager.getName()}, Manager</h2>
+            <div class="Manager">
+                <h2>${manager.getName()}</h2>
+                <h4 class="text-center">Manager</h4>
+            </div>
             <div class="employee-info">
                 <p>ID: ${manager.getId()}<p>
                 <br>
@@ -18,7 +21,10 @@ const generateTeam = team => {
     const engineerCard = engineer => {
         return `
         <div class="employee-card">
-            <h2 class="Engineer">${engineer.getName()}, Engineer</h2>
+            <div class="Engineer">
+                <h2>${engineer.getName()}</h2>
+                <h4 class="text-center">Engineer</h4>
+            </div>
             <div class="employee-info">
                 <p>ID: ${engineer.getId()}<p>
                 <br>
@@ -32,12 +38,13 @@ const generateTeam = team => {
 
     const internCard = intern => {
         return `
-        <div class="employee-card">
-            <h2 class="Intern">${intern.getName()}, Intern</h2>
+            <div class="employee-card">
+                <div class="Intern">
+                    <h2>${intern.getName()}</h2>
+                    <h4 class="text-center">Intern</h4>
+                </div>
             <div class="employee-info">
                 <p>ID: ${intern.getId()}<p>
-                <br>
-                <p>Phone: ${intern.getNumber()}</p>
                 <br>
                 <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a>}</p>
                 <br>
